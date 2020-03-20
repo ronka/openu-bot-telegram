@@ -1,4 +1,5 @@
 import requests
+import config
 
 from config import semester_list, course_dict, bot, year_list, flag, API_COURSE
 from telebot import types
@@ -7,16 +8,14 @@ from steps.process_year import *
 
 
 def process_name_step(message):
-    global flag
-
     chat_id = message.chat.id
     course_name = message.text
 
     request_params = {'name': course_name}
 
     try:
-        if flag:
-            flag = False
+        if config.flag:
+            config.flag = False
             r = requests.get(url=API_COURSE, params=request_params)
             data = r.json()
         else:

@@ -1,4 +1,5 @@
 import os
+import config
 
 from telebot import types
 from config import *
@@ -22,9 +23,6 @@ def send_welcome(message):
 
 
 def start_process(message):
-    global flag
-
-    flag = True  # ajax flag
     chat_id = message.chat.id
     bot.send_message(chat_id, divider)
 
@@ -44,6 +42,8 @@ def callback_query(call):
 
 @bot.callback_query_handler(func=lambda call: call.data == "cb_number")
 def callback_by_number(call):
+    config.flag = True  # ajax flag
+
     chat_id = call.message.chat.id
     msg = bot.send_message(chat_id, 'מספר קורס:')
     bot.register_next_step_handler(msg, process_course_id_step)
@@ -51,6 +51,8 @@ def callback_by_number(call):
 
 @bot.callback_query_handler(func=lambda call: call.data == "cb_name")
 def callback_by_name(call):
+    config.flag = True  # ajax flag
+
     chat_id = call.message.chat.id
     msg = bot.send_message(chat_id, 'שם הקורס:')
     bot.register_next_step_handler(msg, process_name_step)

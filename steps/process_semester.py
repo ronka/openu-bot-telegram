@@ -1,4 +1,5 @@
 import requests
+import config
 
 from telebot import types
 from helpers import send_keyboard, print_link
@@ -6,8 +7,6 @@ from config import semester_list, course_dict, bot, year_list, divider, flag, AP
 
 
 def process_semester_step(message):
-    global flag
-
     chat_id = message.chat.id
     semester = message.text
 
@@ -22,8 +21,8 @@ def process_semester_step(message):
 
     request_params = {'courseId': course.courseId, 'year': course.year, 'semester': course.semester}
 
-    if flag:
-        flag = False
+    if config.flag:
+        config.flag = False
         r = requests.get(url=API_LINK, params=request_params)
         data = r.json()
     else:
