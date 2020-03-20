@@ -17,7 +17,6 @@ OpenU-Bot for getting group links.
 
 `. ./<env_name>/Scripts/activate` 
 
-
 #### environment variables
 
 - `TOKEN_API` - Telegram bot API key

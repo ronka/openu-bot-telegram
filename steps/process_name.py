@@ -18,8 +18,8 @@ def process_name_step(message):
 
     try:
         if flag:
-            r = requests.get(url=API_COURSE, params=request_params)
             flag = False
+            r = requests.get(url=API_COURSE, params=request_params)
             data = r.json()
         else:
             return
