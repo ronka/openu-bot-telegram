@@ -9,6 +9,10 @@ OpenU-Bot for getting group links.
 - install required modules `pip install -r requirements.txt`
 - run the bot `python openu-bot.py`
 
+#### Push to heroku
+
+`git push heroku master`
+
 #### Running the environment
 
 `. ./<env_name>/Scripts/activate` 
