@@ -3,8 +3,9 @@
 OpenU-Bot for getting group links. 
 
 - get bot api key from BotFather
-- install required modules `pip install -r requirements.txt`
 - setup environment variables
+- install required modules `pip install -r requirements.txt`
+- run the bot `python openu-bot.py`
 
 #### Running the environment
 
