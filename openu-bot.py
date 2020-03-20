@@ -22,6 +22,9 @@ def send_welcome(message):
 
 
 def start_process(message):
+    global flag
+
+    flag = True  # ajax flag
     chat_id = message.chat.id
     bot.send_message(chat_id, divider)
 
@@ -36,9 +39,6 @@ def start_process(message):
 
 @bot.callback_query_handler(func=lambda call: call.data == "cb_start")
 def callback_query(call):
-    global flag
-
-    flag = True
     start_process(call.message)
 
 

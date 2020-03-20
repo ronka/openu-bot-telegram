@@ -1,10 +1,14 @@
 from helpers import send_keyboard
-from config import semester_list, course_dict, bot, year_list
+from config import semester_list, course_dict, bot, year_list, flag
 
 from steps.process_semester import process_semester_step
 
 
 def process_year_step(message):
+    global flag
+
+    flag = True  # reset process name ajax flag
+
     try:
         chat_id = message.chat.id
         year = message.text

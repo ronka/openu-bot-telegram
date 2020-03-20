@@ -4,8 +4,6 @@ from telebot import types
 from helpers import send_keyboard, print_link
 from config import semester_list, course_dict, bot, year_list, divider, flag, API_LINK
 
-from steps.process_year import *
-
 
 def process_semester_step(message):
     global flag
