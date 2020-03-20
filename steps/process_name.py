@@ -1,20 +1,18 @@
 import requests
 
-from config import semester_list, course_dict, bot, year_list, API_COURSE
+from config import semester_list, course_dict, bot, year_list, flag, API_COURSE
 from telebot import types
 
 from steps.process_year import *
-
-flag = True
 
 
 def process_name_step(message):
     global flag
 
     chat_id = message.chat.id
-    courseName = message.text
+    course_name = message.text
 
-    request_params = {'name': courseName}
+    request_params = {'name': course_name}
 
     try:
         if flag:
@@ -42,7 +40,6 @@ def process_name_step(message):
         markup.add(*links)
 
         bot.send_message(chat_id, "בחר קורס:", reply_markup=markup)
-        flag = True
 
     except Exception as e:
         markup = types.InlineKeyboardMarkup()

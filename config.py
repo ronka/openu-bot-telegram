@@ -22,6 +22,7 @@ semester_list = {
 course_dict = {}
 server = None
 divider = "###############"
+flag = True
 
 bot = telebot.TeleBot(API_TOKEN, threaded=False)
 

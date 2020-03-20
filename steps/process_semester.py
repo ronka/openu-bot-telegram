@@ -2,11 +2,10 @@ import requests
 
 from telebot import types
 from helpers import send_keyboard, print_link
-from config import semester_list, course_dict, bot, year_list, divider, API_LINK
+from config import semester_list, course_dict, bot, year_list, divider, flag, API_LINK
 
 from steps.process_year import *
 
-flag = True
 
 def process_semester_step(message):
     global flag
@@ -31,8 +30,6 @@ def process_semester_step(message):
         data = r.json()
     else:
         return
-
-    flag = True
 
     # if no links found
     if not data['success']:
