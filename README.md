@@ -1,6 +1,6 @@
 # OpenU-Bot
 
-OpenU-Bot for getting group links. 
+Python based Telegram bot for getting group links.
 
 #### Setting up the project
 
