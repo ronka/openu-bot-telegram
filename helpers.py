@@ -3,7 +3,7 @@ from telebot import types
 
 
 def send_keyboard(bot, message, text, options):
-    markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)
+    markup = types.ReplyKeyboardMarkup(one_time_keyboard=True, row_width=1)
     markup.add(*options)
     msg = bot.reply_to(message, text, reply_markup=markup)
 

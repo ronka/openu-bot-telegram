@@ -13,11 +13,11 @@ ENV = os.getenv('ENV')
 
 isLocal = ENV == 'local'
 
-year_list = ['2020', '2019']
+year_list = ['2021', '2020', '2019']
 semester_list = {
-    'ג': 'c',
-    'ב': 'b',
     'א': 'a',
+    'ב': 'b',
+    'ג': 'c',
 }
 course_dict = {}
 server = None
