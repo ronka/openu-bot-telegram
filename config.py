@@ -13,7 +13,7 @@ ENV = os.getenv('ENV')
 
 isLocal = ENV == 'local'
 
-year_list = ['2021', '2020', '2019']
+year_list = ['2022', '2021']
 semester_list = {
     'א': 'a',
     'ב': 'b',
